@@ -1,3 +1,4 @@
+/*
 
 import java.lang.Enum<>
 
@@ -51,7 +52,7 @@ public enum DamageType {
   THUNDER
 }
 
-// 
+//
 interface ScoreModifier implements Comparable
   // Precedence determines the order in which modifiers are applied
   public int getPrecedence()
@@ -162,7 +163,7 @@ class WeaponProficiency : Proficiency
 
 
 class Equipment
-  
+
 
 class EquipmentLibrary
 
@@ -173,3 +174,4 @@ Class Character
   int getCurrentHitPoints();
   AbilityScoreGroup getScores();
 
+*/
