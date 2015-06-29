@@ -1,5 +1,5 @@
 # 5e-Roper-Droid
-The better D&amp;D 5e app
+The better D&amp;D 5e app. This app is currently in heavy construction, more details regarding the roadmap may be found in the [wiki](../../wiki).
 
 # Compilation
 
