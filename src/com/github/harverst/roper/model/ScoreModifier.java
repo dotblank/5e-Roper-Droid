@@ -1,28 +1,23 @@
 package com.github.harverst.roper.model;
 
-import java.lang.Comparable;
-
-/**
- * A ScoreModifier uses a modifier function to change the value of a score
- *
- * Implements compareTo using a protected precedence variable to determine
- * the order that the modifiers will be applied.
- */
-public abstract class ScoreModifier implements Comparable<ScoreModifier>
+public interface ScoreModifier extends Comparable<ScoreModifier>
 {
   /**
-   * Used to determine the order in which the modifiers are applied.
+   * Used for implementation of Comparable.
+   * 
+   * @return 
+   * 
+   * precedence must be implemented such that the modifiers that are applied 
+   * earlier return a higher precedence than modifiers applied later. The order
+   * of modifiers that return the same value is undefined.
    */
-  protected int precedence;
+  public int precedence();
   /**
-   * Accepts the current value and returns the modified value.
-   *
-   * @param oldValue the unmodified value
-   * @return the value after modification
+   * Accepts the current score and returns the modified score.
+   * 
+   * @param oldValue the unmodified score
+   * @return the score after modification
    */
-  public abstract int modify(int oldValue);
-  public int compareTo(ScoreModifier o) {
-    return precedence - o.precedence;
-  }
+  public int modify(int oldValue);
 }
 

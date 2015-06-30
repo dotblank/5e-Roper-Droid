@@ -2,29 +2,38 @@ package com.github.harverst.roper.model;
 
 import com.github.harverst.roper.model.Score;
 import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Iterator;
 
 class BasicScore implements Score
 {
   private int baseValue;
-  //private SortedSet modifiers;
-  public BasicScore() {
-    //modifiers = ConcurrentSkip;
+  private TreeSet<ScoreModifier> modifiers;
+  
+  public BasicScore()
+  {
+    modifiers = new TreeSet();
   }
-  public int getValue() {
-    return 0;
+  
+  public int getValue()
+  {
+    int accumulator = baseValue;
+    for(Iterator<ScoreModifier> it = modifiers.descendingIterator(); 
+      it.hasNext();)
+    {
+      accumulator = it.next().modify(accumulator);
+    }
+    return accumulator;
   }
-  /**
-   * Precedence is 0 for most cases
-   */
-  public int precedence() {
-    return 0;
+  
+  public void removeModifier(ScoreModifier mod)
+  {
+    modifiers.remove(mod);
   }
-
-  public void removeModifier(ScoreModifier mod) {
-
-  }
-  public void addModifier(ScoreModifier mod) {
-
+  
+  public void addModifier(ScoreModifier mod)
+  {
+    modifiers.add(mod);
   }
 }
 
