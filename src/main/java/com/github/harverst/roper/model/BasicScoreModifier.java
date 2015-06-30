@@ -27,14 +27,14 @@ public abstract class BasicScoreModifier implements ScoreModifier
    * @return the value after modification
    */
   public abstract int modify(int oldValue);
-  public int precedence() {
+  public int getPrecedence() {
     return precedenceNum;
   }
   /**
    * Implemented in accord with the definition of compareTo
    */
   public int compareTo(ScoreModifier o) {
-    return precedenceNum - o.precedence();
+    return precedenceNum - o.getPrecedence();
   }
 }
 
