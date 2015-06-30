@@ -1,11 +1,12 @@
 package com.github.harverst.roper.model;
 
-class ScoreGroup extends TreeSet<Score> implements ScoreGroupModifier
+import java.util.TreeSet;
+
+class ScoreGroup extends TreeSet<Score>
 {
   public ScoreGroup(int size) {
   }
   public void addModifier(ScoreGroupModifier mod) {
-    Score
   }
   public void modifier() {
   }
