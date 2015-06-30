@@ -1,18 +1,27 @@
 # 5e-Roper-Droid
 The better D&amp;D 5e app. This app is currently in heavy construction, more details regarding the roadmap may be found in the [wiki](../../wiki).
 
-# Compilation
+# Requirements
+Android SDK 22 (The target sdk can be changed by editing the pom.xml)
+
+Maven version 3
+
 
 ## Linux Compilation
-Before compilation the android development kit needs to generate local.properties. After cloning the repository run the command below in its root directory.
+ANDROID_HOME environmental variable must be set
 
-> android update project --path .
+The following must also be added to your PATH
+* $ANDROID_HOME/platform-tools
+* $ANDROID_HOME/tools
+
+To comile simply run
+> mvn package
 
 If this fails, ensure the android development kit tools directory is on the system path.
 
-The ant build tool is necessary to compile the app. Running this command from the repository root will compile the debug version of the app.
+If you set your ANDROID_HOME in a .bashrc you will need to resolve the variable as a command line argument
+> mvn package -Dandroid.sdk.path=$ANDROID_HOME
 
-> ant debug
 
 # Running
 
@@ -23,4 +32,13 @@ After compilation has completed the app can be tested in an emulator. Start the 
 
 The compiled app (assuming the debug version) can be installed to the emulator once the virtual device has started up.
 
-> adb install bin/Roper5eDroid-debug.apk
+> adb install target/roper.apk
+
+## Running on physical hardware
+If the android device is connected and running in debug mode, you can issue one command to compile, install and run
+
+> mvn package android:deploy android:run
+
+or optionally
+
+> mvn package android:deploy android:run -Dandroid.sdk.path=$ANDROID_HOME
