@@ -5,11 +5,15 @@ public interface ScoreModifier extends Comparable<ScoreModifier>
   /**
    * Used for implementation of Comparable.
    *
-   * @return
+   * @return precedence 
    *
    * precedence must be implemented such that the modifiers that are applied
-   * earlier return a higher precedence than modifiers applied later. The order
-   * of modifiers that return the same value is undefined.
+   * earlier return a higher precedence than modifiers applied later. Two
+   * modifiers with the same precedence cannot exist in the same list.
+   *
+   * When compareTo is implemented the resulting order should place the 
+   * modifiers with high precedence first and the modifiers with low
+   * precedence last.
    */
   public int getPrecedence();
   /**
