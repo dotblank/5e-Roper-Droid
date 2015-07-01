@@ -1,6 +1,6 @@
 package com.github.harverst.roper.model;
 
-class DivisiveScoreModifier extends BasicScoreModifier
+public class DivisiveScoreModifier extends BasicScoreModifier
 {
   private int divisor;
   public DivisiveScoreModifier(int aDivisor, int precedence)
