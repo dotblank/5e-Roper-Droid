@@ -42,3 +42,6 @@ If the android device is connected and running in debug mode, you can issue one 
 or optionally
 
 > mvn package android:deploy android:run -Dandroid.sdk.path=$ANDROID_HOME
+
+# Developing
+Online reference and documentation of classes can be found in our [Javadoc](http://harverst.github.io/5e-Roper-Droid/)
