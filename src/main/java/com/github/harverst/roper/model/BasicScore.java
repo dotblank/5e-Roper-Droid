@@ -25,7 +25,7 @@ class BasicScore implements Score
   public int getValue()
   {
     int accumulator = baseValue;
-    for(Iterator<ScoreModifier> it = modifiers.descendingIterator(); 
+    for(Iterator<ScoreModifier> it = modifiers.iterator(); 
       it.hasNext();)
     {
       accumulator = it.next().modify(accumulator);
@@ -33,14 +33,18 @@ class BasicScore implements Score
     return accumulator;
   }
   
-  public void removeModifier(ScoreModifier mod)
-  {
-    modifiers.remove(mod);
-  }
-  
   public void addModifier(ScoreModifier mod)
   {
+    if(mod == null)
+      return;
     modifiers.add(mod);
+  }
+  
+  public void removeModifier(ScoreModifier mod)
+  {
+    if(mod == null)
+      return;
+    modifiers.remove(mod);
   }
 }
 
