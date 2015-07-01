@@ -13,7 +13,8 @@ public abstract class BasicScoreModifier implements ScoreModifier
   /**
    * The constructor sets the order in which the modifier is executed.
    */
-  public BasicScoreModifier(int order) {
+  public BasicScoreModifier(int order)
+  {
     precedenceNum = order;
   }
   /**
@@ -27,14 +28,18 @@ public abstract class BasicScoreModifier implements ScoreModifier
    * @return the value after modification
    */
   public abstract int modify(int oldValue);
-  public int getPrecedence() {
+  public int getPrecedence()
+  {
     return precedenceNum;
   }
   /**
-   * Implemented in accord with the definition of compareTo
+   * Implemented in accord with the definition of compareTo.
+   *
+   * @return The difference in precedence
    */
-  public int compareTo(ScoreModifier o) {
-    return precedenceNum - o.getPrecedence();
+  public int compareTo(ScoreModifier o)
+  {
+    return o.getPrecedence() - precedenceNum;
   }
 }
 

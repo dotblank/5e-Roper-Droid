@@ -12,6 +12,13 @@ class BasicScore implements Score
   
   public BasicScore()
   {
+    baseValue = 0;
+    modifiers = new TreeSet();
+  }
+  
+  public BasicScore(int base)
+  {
+    baseValue = base;
     modifiers = new TreeSet();
   }
   
