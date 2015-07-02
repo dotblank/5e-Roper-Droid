@@ -4,9 +4,9 @@ import java.util.List;
 
 interface ScoreGroup extends List<Score>
 {
-  public void addModifier(List<ScoreModifier> mod) 
-    throws ScoreGroupModifierListSizeMismatchException;
-  public void removeModifier(List<ScoreModifier> mod)
-    throws ScoreGroupModifierListSizeMismatchException;
+  public void addComponent(List<ScoreComponent> mod) 
+    throws ScoreGroupComponentSizeMismatchException;
+  public void removeComponent(List<ScoreComponent> mod)
+    throws ScoreGroupComponentSizeMismatchException;
 }
 
