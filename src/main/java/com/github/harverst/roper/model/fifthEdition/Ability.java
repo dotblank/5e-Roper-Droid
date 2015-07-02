@@ -1,4 +1,4 @@
-package com.github.harverst.roper.model;
+package com.github.harverst.roper.model.fifthEdition;
 
 public enum Ability
 {
