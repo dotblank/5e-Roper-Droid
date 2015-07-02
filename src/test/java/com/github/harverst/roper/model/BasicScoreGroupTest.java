@@ -32,17 +32,17 @@ public class BasicScoreGroupTest
     assertEquals("Check idx 2", 4, group.get(2).getValue());
     assertEquals("Check idx 3", 8, group.get(3).getValue());
     assertEquals("Check idx 4", 7, group.get(4).getValue());
-    List<ScoreModifier> mods = new ArrayList<ScoreModifier>();
-    mods.add(new AdditiveScoreModifier(4, 0));
-    mods.add(new MultiplicativeScoreModifier(4, 0));
-    mods.add(new DivisiveScoreModifier(3, 0));
+    List<ScoreComponent> mods = new ArrayList<ScoreComponent>();
+    mods.add(new AdditiveScoreComponent(4, 0));
+    mods.add(new MultiplicativeScoreComponent(4, 0));
+    mods.add(new DivisiveScoreComponent(3, 0));
     mods.add(null);
-    mods.add(new AdditiveScoreModifier(4, 0));
+    mods.add(new AdditiveScoreComponent(4, 0));
     try
     {
-      group.addModifier(mods);
+      group.addComponent(mods);
     }
-    catch(ScoreGroupModifierListSizeMismatchException e)
+    catch(ScoreGroupComponentSizeMismatchException e)
     {
       fail("List size mismatch occurred during add");
     }
@@ -54,9 +54,9 @@ public class BasicScoreGroupTest
     assertEquals("Modded check idx 4", 11, group.get(4).getValue());
     try
     {
-      group.removeModifier(mods);
+      group.removeComponent(mods);
     }
-    catch(ScoreGroupModifierListSizeMismatchException e)
+    catch(ScoreGroupComponentSizeMismatchException e)
     {
       fail("List size mismatch occurred during remove");
     }

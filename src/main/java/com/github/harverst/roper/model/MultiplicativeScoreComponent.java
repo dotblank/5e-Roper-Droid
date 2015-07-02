@@ -1,15 +1,15 @@
 package com.github.harverst.roper.model;
 
-class MultiplicativeScoreModifier extends BasicScoreModifier
+class MultiplicativeScoreComponent extends BasicScoreComponent
 {
   private int multiplier;
-  public MultiplicativeScoreModifier(int aMultiplier, int precedence)
+  public MultiplicativeScoreComponent(int aMultiplier, int precedence)
   {
     super(precedence);
     multiplier = aMultiplier;
   }
   @Override
-  public int modify(int oldValue)
+  public int composite(int oldValue)
   {
     return oldValue * multiplier;
   }

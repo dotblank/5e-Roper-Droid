@@ -13,30 +13,30 @@ class BasicScoreGroup extends ArrayList<Score> implements ScoreGroup
   {
     super(initial);
   }
-  public void addModifier(List<ScoreModifier> mod) 
-    throws ScoreGroupModifierListSizeMismatchException
+  public void addComponent(List<ScoreComponent> mod) 
+    throws ScoreGroupComponentSizeMismatchException
   {
     if(size() != mod.size())
     {
-      throw new ScoreGroupModifierListSizeMismatchException();
+      throw new ScoreGroupComponentSizeMismatchException();
     }
     Iterator<Score> scoreIt = iterator();
-    for(Iterator<ScoreModifier> modIt = mod.iterator(); modIt.hasNext();)
+    for(Iterator<ScoreComponent> modIt = mod.iterator(); modIt.hasNext();)
     {
-      scoreIt.next().addModifier(modIt.next());
+      scoreIt.next().addComponent(modIt.next());
     }
   }
-  public void removeModifier(List<ScoreModifier> mod)
-    throws ScoreGroupModifierListSizeMismatchException
+  public void removeComponent(List<ScoreComponent> mod)
+    throws ScoreGroupComponentSizeMismatchException
   {
     if(size() != mod.size())
     {
-      throw new ScoreGroupModifierListSizeMismatchException();
+      throw new ScoreGroupComponentSizeMismatchException();
     }
     Iterator<Score> scoreIt = iterator();
-    for(Iterator<ScoreModifier> modIt = mod.iterator(); modIt.hasNext();)
+    for(Iterator<ScoreComponent> modIt = mod.iterator(); modIt.hasNext();)
     {
-      scoreIt.next().removeModifier(modIt.next());
+      scoreIt.next().removeComponent(modIt.next());
     }
   }
 }

@@ -6,12 +6,12 @@ import static java.lang.Integer.signum;
 
 import org.junit.Test;
 
-public class BasicScoreModifierTest
+public class BasicScoreComponentTest
 {
   @Test
   public void intConstructorPrecedenceShouldBeConfigured()
   {
-    ScoreModifier basic = new TestScoreModifier(2);
+    ScoreComponent basic = new TestScoreComponent(2);
     assertEquals("Int constructor precedence should be configured", 
       2, basic.getPrecedence());
   }
@@ -20,9 +20,9 @@ public class BasicScoreModifierTest
   public void compareToShouldConform()
   {
     // Ensure Comparable is correctly implemented
-    ScoreModifier first = new TestScoreModifier(5);
-    ScoreModifier second = new TestScoreModifier(4);
-    ScoreModifier third = new TestScoreModifier(3);
+    ScoreComponent first = new TestScoreComponent(5);
+    ScoreComponent second = new TestScoreComponent(4);
+    ScoreComponent third = new TestScoreComponent(3);
     assertEquals("must satisfy: sgn(x.compareTo(y)) == -sgn(y.compareTo(x))", 
       signum(first.compareTo(second)), -signum(second.compareTo(first)));
     assertTrue("first must precede second",

@@ -8,43 +8,43 @@ import java.util.Iterator;
 class BasicScore implements Score
 {
   private int baseValue;
-  private TreeSet<ScoreModifier> modifiers;
+  private TreeSet<ScoreComponent> components;
   
   public BasicScore()
   {
     baseValue = 0;
-    modifiers = new TreeSet();
+    components = new TreeSet();
   }
   
   public BasicScore(int base)
   {
     baseValue = base;
-    modifiers = new TreeSet();
+    components = new TreeSet();
   }
   
   public int getValue()
   {
     int accumulator = baseValue;
-    for(Iterator<ScoreModifier> it = modifiers.iterator(); 
+    for(Iterator<ScoreComponent> it = components.iterator(); 
       it.hasNext();)
     {
-      accumulator = it.next().modify(accumulator);
+      accumulator = it.next().composite(accumulator);
     }
     return accumulator;
   }
   
-  public void addModifier(ScoreModifier mod)
+  public void addComponent(ScoreComponent mod)
   {
     if(mod == null)
       return;
-    modifiers.add(mod);
+    components.add(mod);
   }
   
-  public void removeModifier(ScoreModifier mod)
+  public void removeComponent(ScoreComponent mod)
   {
     if(mod == null)
       return;
-    modifiers.remove(mod);
+    components.remove(mod);
   }
 }
 

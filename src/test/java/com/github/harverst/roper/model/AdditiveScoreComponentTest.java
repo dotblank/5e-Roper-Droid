@@ -4,20 +4,20 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class AdditiveScoreModifierTest
+public class AdditiveScoreComponentTest
 {
   @Test
   public void constructorShouldSetPrecedence()
   {
-    ScoreModifier mod = new AdditiveScoreModifier(5, 0);
+    ScoreComponent mod = new AdditiveScoreComponent(5, 0);
     assertEquals("Precedence should be set by constructor", 
       0, mod.getPrecedence());
   }
   @Test
-  public void modifyShouldAdd()
+  public void compositeShouldAdd()
   {
-    ScoreModifier mod = new AdditiveScoreModifier(5, 0);
-    assertEquals("Result should be 4 + 5 => 9", 9, mod.modify(4));
+    ScoreComponent mod = new AdditiveScoreComponent(5, 0);
+    assertEquals("Result should be 4 + 5 => 9", 9, mod.composite(4));
   }
 }
 
