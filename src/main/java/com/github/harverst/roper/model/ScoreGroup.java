@@ -1,14 +1,12 @@
 package com.github.harverst.roper.model;
 
-import java.util.TreeSet;
+import java.util.List;
 
-class ScoreGroup extends TreeSet<Score>
+interface ScoreGroup extends List<Score>
 {
-  public ScoreGroup(int size) {
-  }
-  public void addModifier(ScoreGroupModifier mod) {
-  }
-  public void modifier() {
-  }
+  public void addComponent(List<ScoreComponent> mod) 
+    throws ScoreGroupComponentSizeMismatchException;
+  public void removeComponent(List<ScoreComponent> mod)
+    throws ScoreGroupComponentSizeMismatchException;
 }
 

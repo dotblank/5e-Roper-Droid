@@ -1,11 +1,24 @@
 package com.github.harverst.roper.model;
 
-import com.github.harverst.roper.model.ScoreModifier;
-
 interface Score
 {
+  /**
+   * Accesses the value of the score with all components applied.
+   *
+   * @return the integer value of the score
+   */
   public int getValue();
-  public void addModifier(ScoreModifier mod);
-  public void removeModifier(ScoreModifier mod);
+  /**
+   * Adds the provided component to this score.
+   *
+   * @param mod a component for this score
+   */
+  public void addComponent(ScoreComponent mod);
+  /**
+   * Removes the component given it was previously added.
+   *
+   * @param mod a component previously added to this score
+   */
+  public void removeComponent(ScoreComponent mod);
 }
 
