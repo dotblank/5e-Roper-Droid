@@ -5,7 +5,7 @@ import java.lang.Enum;
 /**
  * An action
  */
-public interface Action<S extends Enum>
+public interface Action<S>
 {
   /**
    *

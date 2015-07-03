@@ -1,21 +1,19 @@
 package com.github.harverst.roper.model;
 
-public interface ScoreComponent extends Comparable<ScoreComponent>
+/**
+ * A ScoreComponent is combined with other score components to form a score.
+ *
+ * The parameter P is used by a PhaseOrder object to manage the order
+ * in which the components are applied
+ */
+public interface ScoreComponent<P>
 {
   /**
    * Used for implementation of Comparable.
    *
-   * @return precedence 
-   *
-   * precedence must be implemented such that the components that are applied
-   * earlier return a higher precedence than components applied later. Two
-   * components with the same precedence cannot exist in the same list.
-   *
-   * When compareTo is implemented the resulting order should place the 
-   * components with high precedence first and the components with low
-   * precedence last.
+   * @return the phase during which the component is applied
    */
-  public int getPrecedence();
+  public P getPhase();
   /**
    * Accepts the current score and returns the composited score.
    *
