@@ -1,11 +1,11 @@
-package com.github.harverst.roper.model;
+package com.github.harverst.roper.model.common;
 
-public class DivisiveScoreComponent extends BasicScoreComponent
+public class DivisiveScoreComponent<P> extends BasicScoreComponent<P>
 {
   private int divisor;
-  public DivisiveScoreComponent(int aDivisor, int precedence)
+  public DivisiveScoreComponent(P aPhase, int aDivisor)
   {
-    super(precedence);
+    super(aPhase);
     divisor = aDivisor;
   }
   @Override

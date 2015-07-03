@@ -1,4 +1,7 @@
-package com.github.harverst.roper.model;
+package com.github.harverst.roper.model.common;
+
+import com.github.harverst.roper.model.ScoreComponent;
+import java.lang.Integer;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,14 +12,14 @@ public class DivisiveScoreComponentTest
   @Test
   public void constructorSetsPrecedence()
   {
-    ScoreComponent mod = new DivisiveScoreComponent(2, 0);
+    ScoreComponent<Integer> mod = new DivisiveScoreComponent(0, 2);
     assertEquals("Precedence must be set by constructor",
-      0, mod.getPrecedence());
+      new Integer(0), mod.getPhase());
   }
   @Test
   public void compositeRoundsDown()
   {
-    ScoreComponent mod = new DivisiveScoreComponent(2, 0);
+    ScoreComponent<Integer> mod = new DivisiveScoreComponent(0, 2);
     assertEquals("Precedence must be set by constructor",
       3, mod.composite(7));
   }

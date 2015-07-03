@@ -7,10 +7,10 @@ import java.util.List;
 /**
  * Highly abstract and parameterized interface used to define characters.
  *
- * The template parameter S should be an enum that lists the different
+ * The template parameter S could be an enum that lists the different
  * types of scores available in the game system referenced.
  */
-public interface Character<S extends Enum>
+public interface Character<S>
 {
   /**
    * Retrieves a score from the given type.

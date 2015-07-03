@@ -9,7 +9,7 @@ import java.lang.Enum;
  * applied needs to be irrelevant to the resulting character. By and large, the
  * means to avoid order dependency is by only adding components.
  */
-public interface CharacterComponent<S extends Enum>
+public interface CharacterComponent<S>
 {
   /**
    * Adds information that composes this piece of the character.
