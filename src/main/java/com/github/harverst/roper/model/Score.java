@@ -2,6 +2,9 @@ package com.github.harverst.roper.model;
 
 /**
  * Scores are values composed of ScoreComponents.
+ *
+ * The template parameter, P, defines phases that can be used for ordering
+ * score components.
  */
 public interface Score<P>
 {
