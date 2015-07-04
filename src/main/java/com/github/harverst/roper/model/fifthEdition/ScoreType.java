@@ -9,6 +9,10 @@ public enum ScoreType
   SKILLS,
   ARMOR_CLASS,
   INITIATIVE,
-  SPEED
+  SPEED,
+  FLY_SPEED,
+  SWIM_SPEED,
+  BURROM_SPEED,
+  CURRENCY
 }
 
