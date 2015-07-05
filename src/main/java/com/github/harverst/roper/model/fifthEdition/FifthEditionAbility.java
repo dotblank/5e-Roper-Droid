@@ -1,6 +1,6 @@
 package com.github.harverst.roper.model.fifthEdition;
 
-public enum Ability
+public enum FifthEditionAbility
 {
   STRENGTH,
   DEXTERITY,
