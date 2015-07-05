@@ -1,7 +1,7 @@
-package com.github.harverst.roper.model.fifthEdition.classes;
+package com.github.harverst.roper.model.fifthedition.classes;
 
-import com.github.harverst.roper.model.fifthEdition.FifthEditionScoreType;
-import com.github.harverst.roper.model.fifthEdition.FifthEditionPhase;
+import com.github.harverst.roper.model.fifthedition.FifthEditionScoreType;
+import com.github.harverst.roper.model.fifthedition.FifthEditionPhase;
 import com.github.harverst.roper.model.CharacterComponent;
 
 interface CharacterClass extends CharacterComponent<FifthEditionScoreType, FifthEditionPhase>

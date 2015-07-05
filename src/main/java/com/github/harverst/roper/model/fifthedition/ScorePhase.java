@@ -1,4 +1,4 @@
-package com.github.harverst.roper.model.fifthEdition;
+package com.github.harverst.roper.model.fifthedition;
 
 public enum ScorePhase
 {

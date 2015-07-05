@@ -1,10 +1,10 @@
-package com.github.harverst.roper.model.fifthEdition.classes;
+package com.github.harverst.roper.model.fifthedition.classes;
 
 import java.util.List;
 import com.github.harverst.roper.model.ScoreComponent;
 import com.github.harverst.roper.model.Character;
-import com.github.harverst.roper.model.fifthEdition.FifthEditionScoreType;
-import com.github.harverst.roper.model.fifthEdition.FifthEditionPhase;
+import com.github.harverst.roper.model.fifthedition.FifthEditionScoreType;
+import com.github.harverst.roper.model.fifthedition.FifthEditionPhase;
 
 /**
  * Implements components for the character class
