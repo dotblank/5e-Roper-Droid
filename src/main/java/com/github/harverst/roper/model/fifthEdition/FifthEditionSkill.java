@@ -1,6 +1,6 @@
-package com.github.harverst.roper.model;
+package com.github.harverst.roper.model.fifthEdition;
 
-public enum Skill
+public enum FifthEditionSkill
 {
   ACROBATICS,
   ANIMAL_HANDLING,
